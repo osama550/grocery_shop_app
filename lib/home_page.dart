@@ -7,6 +7,8 @@ import 'package:grocery_shop_app/cubit/app_cubit.dart';
 import 'package:grocery_shop_app/cubit/app_state.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class HomePage extends StatelessWidget {
                   height: 5,
                 ),
                 Padding(
-                  padding:EdgeInsets.symmetric(
+                  padding:const EdgeInsets.symmetric(
                     horizontal: 24,
                   ),
                   child: Text(
@@ -68,13 +70,13 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Expanded(
                     child: GridView.builder(
                       itemCount: AppCubit.get(context).allItem.length,
-                      gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         childAspectRatio: 1 / 1.37,
                         crossAxisSpacing: 0.5,
@@ -100,11 +102,11 @@ class HomePage extends StatelessWidget {
           floatingActionButton: FloatingActionButton(
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return CartPage();
+                return const CartPage();
               },));
             },
             backgroundColor: Colors.black,
-            child: Icon(
+            child: const Icon(
               Icons.shopping_bag,
               size: 30,
               color: Colors.white,
